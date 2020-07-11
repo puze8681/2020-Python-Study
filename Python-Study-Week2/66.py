@@ -1,10 +1,16 @@
-totalGrade = 0
-inputCount = 0
+total = 0
 while 1:
-    grade = input("문자 등급을 입력하세요. ")
-    if grade == "":
-        print("등급 평균 :", totalGrade/inputCount)
+    age = input("나이를 입력하세요. ")
+    if age == "":
+        print("전체 입장료 :", format(total, ".2f"))
         break
     else:
-        inputCount += 1
-        totalGrade += {'A+': 4.0, 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3, 'D': 1.0, 'F': 0}.get(grade, 0)
+        age = int(age)
+        if 0 <= age <= 2:
+            total+=0
+        elif 3 <= age <= 12:
+            total += 14
+        elif age >= 65:
+            total += 18
+        else:
+            total += 23

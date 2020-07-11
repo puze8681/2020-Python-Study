@@ -1,0 +1,1 @@
+print({1:"Washington",2:"Thomas Jefferson",5: "Abraham Lincoln", 10: "Alexander Hamilton",20: "Andrew Jackson",50: "Ulyssess S.Grant",100: "Benjamin Franklin"}.get(int(input('지폐 단위를 입력하세요. ')), "해당 지폐 단위는 없습니다."))

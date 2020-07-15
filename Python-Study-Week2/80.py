@@ -16,7 +16,7 @@ for i in range(10):
         if sameFlipCount == 2:
             for j in flipList:
                 print(j, end=" ")
-            print("({0:>1d}".format(flipCount), "flips)")
+            print("({}".format(flipCount), "flips)")
             totalFlipCount += flipCount
             break
 print("On average,",totalFlipCount/10, "flips were needed")

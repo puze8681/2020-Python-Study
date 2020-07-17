@@ -2,7 +2,6 @@ def capitalize(original):
     result = ""
     punctuations = '''!,.?'''
     isEnd = True
-    print(punctuations)
     for i in range(len(original)):
         c = original[i]
         if c in punctuations:
@@ -14,14 +13,12 @@ def capitalize(original):
                 isEnd = False
             else:
                 if c == 'i' and i != 0:
-                    print(c, i)
                     if original[i-1] == original[i+1] == ' ':
                         result = result + c.upper()
                     else:
                         result = result + c
                 else:
                     result = result + c
-    print(original)
     print(result)
 
 

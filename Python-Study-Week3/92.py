@@ -9,4 +9,4 @@ def prime(number):
         print("1보다 큰 수를 입력해주세요.")
 
 
-prime(int(input('문자열을 입력하세요. ')))
+prime(int(input('숫자를 입력하세요. ')))

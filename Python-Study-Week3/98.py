@@ -1,10 +1,12 @@
 def hex2int(hexNumber):
     result = 0
-    for c in hexNumber:
+    count = 0
+    for c in reversed(hexNumber):
         if c.isalpha():
-            result += {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}.get(str(c), 0)
+            result += {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}.get(str(c.upper()), 0) * (16 ** count)
         else:
-            result += int(c)
+            result += int(c) * (16 ** count)
+        count += 1
     return result
 
 

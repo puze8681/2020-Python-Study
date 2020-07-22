@@ -23,10 +23,7 @@ def checkPassword(password):
             isLower = True
         elif c.isdigit():
             isNumber = True
-    if isLength and isUpper and isLower and isNumber:
-        return True
-    else:
-        return False
+    return isLength and isUpper and isLower and isNumber
 
 
 def main():

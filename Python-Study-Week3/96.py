@@ -12,10 +12,7 @@ def checkPassword(password):
             isLower = True
         elif c.isdigit():
             isNumber = True
-    if isLength and isUpper and isLower and isNumber:
-        print(True)
-    else:
-        print(False)
+    print(isLength and isUpper and isLower and isNumber)
 
 
 checkPassword(input('비밀번호를 입력해주세요. '))

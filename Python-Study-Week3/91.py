@@ -3,9 +3,11 @@ def precedence(string):
     for i in string:
         if i == '+' or i == '-':
             result = 1
-        elif i == '*' or i == '/':
+    for i in string:
+        if i == '*' or i == '/':
             result = 2
-        elif i == '^':
+    for i in string:
+        if i == '^':
             result = 3
     print(result)
 

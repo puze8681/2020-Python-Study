@@ -2,7 +2,6 @@ def analysing(paramList, n):
     if len(paramList) < 4:
         return print("리스트의 원소 개수가 너무 적습니다.")
 
-    print(paramList)
     paramList.sort()
     resultList = []
     for i in range(n, len(paramList)-n):

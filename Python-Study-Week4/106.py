@@ -1,5 +1,5 @@
 def analysing(paramList, n):
-    if len(paramList) < 4:
+    if len(paramList) < n * 2:
         return print("리스트의 원소 개수가 너무 적습니다.")
 
     paramList.sort()

@@ -1,6 +1,8 @@
 def reverseLookup(data, key):
+    reverseData = dict(map(reversed, data.items()))
+    print(reverseData)
     if key.isdigit():
-        print("찾는 값은 {}".format(data.get(int(key), "없습니다.")))
+        print("찾는 값은 {}".format(reverseData.get(int(key), "없습니다.")))
     else:
         print("키 값은 숫자입니다.")
 

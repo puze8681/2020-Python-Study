@@ -1,4 +1,5 @@
 import random
+import time
 import os
 
 
@@ -41,10 +42,9 @@ def shuffleBingo():
     return {'B': listB, 'I': listI, 'N': listN, 'G': listG, 'O': listO}
 
 
-def displayBingo(bingoDictionary, bingoList, playTime):
+def displayBingo(bingoDictionary, bingoList):
     # Windows 환경에서는 os.system('cls')
     os.system('clear')
-    print("{:>19}".format("play count: {}").format(playTime+1))
     print("{:>19}".format("call count: {}").format(len(bingoList)))
     print("{:>3} {:>3} {:>3} {:>3} {:>3}".format("B", "I", "N", "G", "O"))
     count = {'0': 0, '1': 0, '2': 0, '3': 0, '4': 0, 'B': 0, 'I': 0, 'N': 0, 'G': 0, 'O': 0, 'L': 0, 'R': 0,}
@@ -93,33 +93,21 @@ def displayBingo(bingoDictionary, bingoList, playTime):
     return True
 
 
-def bingoPlay(playTime):
+def bingoPlay():
     shuffleDeck = shuffleBingo()
     isPlaying = True
     bingo = []
     while isPlaying:
+        time.sleep(0.5)
         isOverlap = True
         while isOverlap:
             bingoElement = random.randint(1, 75)
             if bingoElement not in bingo:
                 bingo.append(bingoElement)
                 isOverlap = False
-        isPlaying = displayBingo(shuffleDeck, bingo, playTime)
+        isPlaying = displayBingo(shuffleDeck, bingo)
         if not isPlaying:
             return len(bingo)
 
 
-def bingoAnalysis():
-    playTime = []
-    playSum = 0
-    for i in range(0, 1000):
-        play = bingoPlay(i)
-        playTime.append(play)
-        playSum += play
-    playTime.sort()
-    print("빙고 게임의 최소 call 개수: {}".format(playTime[0]))
-    print("빙고 게임의 최대 call 개수: {}".format(playTime[len(playTime)-1]))
-    print("빙고 게임의 평균 call 개수: {}".format(playSum / 1000))
-
-
-bingoAnalysis()
+bingoPlay()

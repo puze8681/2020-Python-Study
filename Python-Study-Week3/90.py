@@ -1,5 +1,6 @@
 def isInteger(string):
     string = string.replace(" ", "")
+    isNumber = False
     number = 0
     operation = 0
     isBeforeNumber = True
@@ -8,9 +9,10 @@ def isInteger(string):
             isBeforeNumber = False
             operation += 1
         elif c.isdigit():
+            isNumber = True
             isBeforeNumber = True
             number += 1
-    if len(string) == number + operation:
+    if isNumber and len(string) == number + operation:
         print("Integer: True")
     else:
         print("Integer: False")
